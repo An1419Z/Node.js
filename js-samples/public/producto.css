@@ -1,0 +1,132 @@
+/* Estilos generales para el cuerpo */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://t3.ftcdn.net/jpg/06/98/31/96/360_F_698319640_kJtQCxHzWCrK3qTAvuISmAqZUVUuFS7Q.jpg'); /* Asegúrate de poner la ruta correcta */
+  background-size: cover; /* Asegura que la imagen cubra toda el área */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Fija la imagen al fondo */
+}
+
+/* Barra superior con botones */
+#top-bar {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y semitransparente para la barra */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.top-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animación de fondo y transformación */
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden; /* Asegura que el contenido no se desborde fuera del borde curvado */
+}
+
+.top-button:hover {
+  background-color: #45a049;
+  transform: scale(1.1); /* Efecto de expansión del botón */
+}
+
+
+/* Estilos para el contenedor principal de los productos */
+#productos-container {
+  display: flex;
+  justify-content: space-around;  /* Distribuye los productos con espacio */
+  flex-wrap: wrap;              /* Permite que los productos se ajusten en varias filas */
+  padding: 20px;
+}
+
+/* Estilos para cada contenedor de producto */
+.producto-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 300px;  /* Ajusta el ancho según necesites */
+  text-align: center;
+  background-color: white;
+}
+
+.producto-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor principal del mapa */
+#map-container {
+  height: calc(100% - 160px); /* Ajusta la altura para dejar espacio a la barra superior y otros elementos */
+  margin: 10px;
+}
+
+/* Contenedor del mapa */
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Barra de búsqueda */
+#search-container {
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Asegura que la búsqueda esté encima del fondo */
+}
+
+/* Estilo de la barra de búsqueda */
+#search-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Contenedor para el clima */
+#weather-container {
+  margin-left: 20px; /* Espacio entre la búsqueda y el clima */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(240, 240, 240, 0.8); /* Fondo semitransparente */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+}
+
+/* Estilo para el texto del clima */
+#weather-info {
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+/* Icono de clima (opcional) */
+#weather-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}

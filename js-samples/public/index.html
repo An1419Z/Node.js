@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login y Registro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #000000, #333333);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 140, 0, 0.1); /* Fondo translúcido naranja */
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      width: 400px;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #ffaa00; /* Amarillo */
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra los inputs horizontalmente */
+    }
+
+    input {
+      width: 90%;
+      max-width: 320px;
+      padding: 15px;
+      margin: 15px 0;
+      border: 1px solid #ffaa00; /* Amarillo */
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #ffaa00; /* Amarillo */
+    }
+
+    button {
+      width: 90%;
+      max-width: 320px;
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ffaa00, #ff8c00); /* De amarillo a naranja */
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #ff8c00, #ffaa00); /* De naranja a amarillo */
+      transform: translateY(-3px);
+    }
+
+    .link {
+      margin-top: 20px;
+      color: #ffaa00; /* Amarillo */
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .link:hover {
+      color: #ff8c00; /* Naranja */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" id="usuario" placeholder="Usuario" required>
+      <input type="password" id="contraseña" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <a href="#" class="link" id="registrarse-link">Registrarse</a>
+  </div>
+
+  <div class="container" id="registro-container" style="display: none;">
+    <h2>Registro</h2>
+    <form id="registro-form">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="text" id="apellido" placeholder="Apellido" required>
+      <input type="text" id="usuario-reg" placeholder="Usuario" required>
+      <input type="password" id="contraseña-reg" placeholder="Contraseña" required>
+      <button type="submit">Registrarse</button>
+    </form>
+    <a href="#" class="link" id="login-link">Volver al Login</a>
+  </div>
+  <script>
+      // Seleccionar los elementos necesarios
+  const loginContainer = document.getElementById('login-container');
+  const registroContainer = document.getElementById('registro-container');
+  const registrarseLink = document.getElementById('registrarse-link');
+  const loginLink = document.getElementById('login-link');
+
+  // Mostrar el formulario de registro
+  registrarseLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginContainer.style.display = 'none';
+    registroContainer.style.display = 'block';
+  });
+
+  // Volver al formulario de login
+  loginLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    registroContainer.style.display = 'none';
+    loginContainer.style.display = 'block';
+  });
+
+    const registroForm = document.getElementById('registro-form');
+    registroForm.addEventListener('submit', (event) => {
+      event.preventDefault(); 
+
+      // Get form data
+      const nombre = document.getElementById('nombre').value;
+      // ... get other form values
+
+      fetch('/registro', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre,  /* ... other form data */ })
+      })
+      .then(response => response.text()) 
+      .then(data => {
+        console.log(data); // Handle the server's response 
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

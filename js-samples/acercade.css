@@ -1,0 +1,165 @@
+/* Estilos generales para el cuerpo */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #49494b;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f7fa, #f5f7fa);
+
+}
+
+#map-container {
+  height: 500px; /* Altura explícita para el contenedor */
+  width: 100%; /* Asegúrate de usar todo el ancho disponible */
+  margin: 20px auto; /* Espaciado y centrado */
+  display: block;
+  background-color: #f0f0f0; /* Fondo para identificarlo durante pruebas */
+  border: 1px solid #ccc; /* Borde para pruebas (opcional) */
+  position: relative;
+}
+
+#map {
+  height: 100%; /* Asegúrate de que el mapa ocupe todo el contenedor */
+  width: 100%;
+}
+
+
+/* Barra superior con los botones */
+#top-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.top-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 100px;
+}
+
+.top-button:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Contenedor para el clima */
+#weather-container {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(240, 240, 240, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+
+}
+
+/* Estilo para el texto del clima */
+#weather-info {
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+/* Icono del clima */
+#weather-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Header compacto */
+header {
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Sección del equipo */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block; /* Cambiar flex a block para evitar colapsos */
+  padding: 20px; /* Espaciado interno */
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.member {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  width: 280px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.member:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, #49494b, #c3cfe2);
+  color: white;
+}
+
+.member img {
+  width: 100%;
+  height: auto;
+  border-bottom: 5px solid #49494b;
+}
+
+.member h2, .member p {
+  margin: 0.5rem 0;
+}
+
+/* Footer compacto */
+footer {
+  background: #49494b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: sticky;
+  bottom: 0;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Clima</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <script type="module" src="login.js"></script>
+  </head>
+  <body>
+    <!-- Barra superior con los botones (puedes ocultarlos si no los necesitas) -->
+    <div id="top-bar">
+      <button class="top-button" id="mapa">Mapa</button>
+      <button class="top-button" id="productos">Productos</button>
+      <button class="top-button" id="acerca">Acerca de</button>
+      <div id="weather-container">
+        <img id="weather-icon" alt="Ícono del clima" />
+        <span id="weather-info">Cargando clima...</span>
+      </div>
+    </div>
+
+    <!-- Mapa, pero oculto (si no deseas mostrarlo) -->
+    <div id="map-container" style="display:none;">
+      <div id="map"></div>
+    </div>
+
+    <!-- Script de Google Maps (solo si el mapa es necesario) -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap"
+      defer
+    ></script>
+  </body>
+</html>

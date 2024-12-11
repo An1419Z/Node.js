@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Clima</title>
+    <link rel="stylesheet" type="text/css" href="acercade.css" />
+    <script src="acercade.js">
+    </script>
+  </head>
+  <body>
+    <!-- Barra superior con los botones (puedes ocultarlos si no los necesitas) -->
+    <div id="top-bar">
+      <button class="top-button" id="mapa">Mapa</button>
+      <button class="top-button" id="productos">Productos</button>
+      <button class="top-button" id="acerca">Acerca de</button>
+      <div id="weather-container">
+        <img id="weather-icon" alt="Ícono del clima" />
+        <span id="weather-info">Cargando clima...</span>
+      </div>      
+      <header>
+        <h1>Acerca de Nosotros</h1>
+    </header>
+    </div>
+  <main>
+      <section class="team">
+          <div class="member" onclick="contactarIntegrante('Alexis Zamora', 'AL23311635@utcj.edu.mx')">
+              <img src="alexis.png" alt="Alexis Zamora">
+              <h2>Alexis Zamora</h2>
+              <p>Programador</p>
+              <p>Matricula: 23311635</p>
+              <p>Telefono: 6563190262</p>
+              <p>Correo: AL23311635@utcj.edu.mx</p>
+          </div>
+          <div class="member" onclick="contactarIntegrante('Angel Zatarain', 'AL23311609@utcj.edu.mx')">
+              <img src="angel.png" alt="Angel Zatarain">
+              <h2>Angel Zatarain</h2>
+              <p>Desarrollador de Software</p>
+              <p>Matricula: 23311609</p>
+              <p>Telefono: 6561234567</p>
+              <p>Correo: AL23311609@utcj.edu.mx</p>
+          </div>
+          <div class="member" onclick="contactarIntegrante('Felipe Torres', 'AL23311628@utcj.edu.mx')">
+              <img src="felipe.png" alt="Felipe Torres">
+              <h2>Felipe Torres</h2>
+              <p>Administrador de Base de Datos</p>
+              <p>Matricula: 23311628</p>
+              <p>Telefono: 6562345678</p>
+              <p>Correo: AL23311628@utcj.edu.mx</p>
+          </div>
+          <div class="member" onclick="contactarIntegrante('Karin Montelongo', 'AL23311621@utcj.edu.mx')">
+              <img src="karin.png" alt="Karin Montelongo">
+              <h2>Karin Montelongo</h2>
+              <p>Especialista en Pruebas</p>
+              <p>Matricula: 23311621</p>
+              <p>Telefono: 6563456789</p>
+              <p>Correo: AL23311621@utcj.edu.mx</p>
+          </div>
+        <div id="map-container">
+          <div id="map"></div>
+        </div>
+      </section>
+  </main>
+  <footer>
+      <p>&copy; 2024 Nuestro Equipo. Todos los derechos reservados.</p>
+  </footer>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap"
+  defer
+></script>
+  </body>
+</html>
